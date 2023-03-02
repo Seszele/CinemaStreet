@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<!--            fx:controller="TO.project.CinemaStreet.controller.UserController"-->
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="400.0" prefWidth="1000.0"
+            fx:controller="TO.project.CinemaStreet.controller.HallMovieController"
+            minHeight="10" minWidth="10">
+    <top>
+        <Label text="Current Shows (id, title, hall id, date)" prefWidth="300"/>
+    </top>
+    <left>
+        <VBox styleClass="image-box">
+            <HBox>
+
+                <TextField  fx:id="searchTextField" promptText="search title" prefWidth="300"/>
+                <ComboBox fx:id="searchByCategoryComboBox" prefWidth="200.0" promptText="Filtruj po kategorii"></ComboBox>
+            </HBox>
+            <ListView fx:id="hallMovieListView" prefWidth="300"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox>
+            <Label text="Add show" prefWidth="120"/>
+            <HBox>
+                <Label text="Hall:" prefWidth="120"/>
+                <ComboBox fx:id="hallComboBox" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose"/>
+            </HBox>
+            <HBox>
+                <VBox>
+                    <Label text="Wybierz film:" />
+                    <ComboBox fx:id="movieComboBox" prefWidth="180" />
+                </VBox>
+                <VBox>
+                    <Label text="Wybierz gatunek:" />
+                    <ComboBox fx:id="categoryComboBox" prefWidth="180" />
+                </VBox>
+
+            </HBox>
+            <HBox>
+                <Label text="Date:" prefWidth="120"/>
+                <HBox>
+                    <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField  fx:id="hourPicker" prefWidth="30"/>
+                    <Label text=":"></Label>
+                    <TextField  fx:id="minutePicker" prefWidth="30"/>
+                </HBox>
+
+            </HBox>
+            <HBox>
+                <Button text="Add show" onAction="#addHallMovie" prefWidth="120"/>
+            </HBox>
+
+            <!--DELETE-->
+            <Label text="Delete show" prefWidth="120"/>
+            <HBox>
+                <Label text="ID:" prefWidth="120"/>
+                <TextField  fx:id="idTextField" prefWidth="120"/>
+            </HBox>
+            <HBox>
+                <Button  text="Delete Show" onAction="#deleteHallMovie" prefWidth="120"/>
+            </HBox>
+
+        </VBox>
+
+    </center>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+</BorderPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            prefHeight="350.0" prefWidth="1000.0"
+            minHeight="100" minWidth="100"
+            fx:controller="TO.project.CinemaStreet.controller.StatisticsController">
+    <top>
+     <Label text="STATYSTYKI" ></Label>
+    </top>
+    <center>
+    <HBox>
+        <VBox>
+            <LineChart fx:id="yearChart" layoutX="10.0" layoutY="10.0" maxHeight="300.0" maxWidth="300.0" legendVisible="false" >
+                <xAxis>
+                    <CategoryAxis fx:id="xYearAxis" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yYearAxis" side="LEFT" />
+                </yAxis>
+            </LineChart>
+            <Button text="EXPORT TO CSV" onAction="#exportYear" prefWidth="120"/>
+        </VBox>
+        <VBox>
+            <BarChart fx:id="movieChart" layoutX="10.0" layoutY="10.0" maxHeight="300.0" maxWidth="300.0" legendVisible="false" >
+                <xAxis>
+                    <CategoryAxis fx:id="xMovieAxis" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yMovieAxis" side="LEFT" />
+                </yAxis>
+            </BarChart>
+            <Button text="EXPORT TO CSV" onAction="#exportMovie" prefWidth="120"/>
+        </VBox>
+        <VBox>
+
+
+        <BarChart fx:id="categoryChart" layoutX="10.0" layoutY="10.0" maxHeight="300.0" maxWidth="300.0" legendVisible="false" >
+            <xAxis>
+                <CategoryAxis fx:id="xCategoryAxis" side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yCategoryAxis" side="LEFT" />
+            </yAxis>
+        </BarChart>
+            <Button text="EXPORT TO CSV" onAction="#exportCategory" prefWidth="120"/>
+        </VBox>
+    </HBox>
+    </center>
+    <bottom>
+
+    </bottom>
+<stylesheets>
+    <URL value="@style.css" />
+</stylesheets>
+</BorderPane>
